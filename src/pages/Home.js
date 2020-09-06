@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      hao
+      hello heroku
     </div>
   );
 }
