@@ -1,0 +1,24 @@
+.container {
+  padding: 20px;
+  background-image: url("../../images/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 14rem;
+}
+.icon {
+  color: #fff;
+  padding-right: 8px;
+}
+
+.title_container {
+  margin-top: 20px;
+}
+
+.action_container {
+  margin-top: 50px;
+}
+.action_btn {
+  text-decoration: none;
+  margin-right: 17px;
+}

@@ -1,0 +1,12 @@
+.image {
+  height: 180px;
+}
+
+.avatar_container {
+  margin-top: 10px;
+}
+.avatar {
+  width: 25px !important;
+  height: 25px !important;
+  margin-right: 10px;
+}
