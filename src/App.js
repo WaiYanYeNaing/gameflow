@@ -1,12 +1,15 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Detail from "./pages/Detail/Detail";
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
+    <Router>
+      <div className="App">
+        {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -20,8 +23,12 @@ function App() {
           Learn React adwd
         </a>
       </header> */}
-      <Home />
-    </div>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/detail" component={Detail} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,36 @@
+.MuiContainer-root {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-bottom: 50px;
+}
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+.category_container {
+  padding: 2rem 1rem 0 1rem;
+}
+
+.title_container {
+  padding: 0 1rem 0.8rem 1rem;
+}
+
+.author_container {
+  padding: 0 1rem 1rem 1rem;
+}
+.avatar {
+  width: 25px !important;
+  height: 25px !important;
+  margin-right: 10px;
+}
+
+.header_img_container {
+  background-image: url("../../images/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 14rem;
+}
+
+.detail_container {
+  padding: 1rem 1rem 0 1rem;
+}

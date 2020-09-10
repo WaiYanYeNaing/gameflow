@@ -9,6 +9,7 @@ import {
 } from "@material-ui/icons";
 import { Typography, Container } from "@material-ui/core";
 import Text from "../Text/Text";
+import { c2, c3 } from "../../themes/Color";
 
 export default function Header() {
   return (
@@ -23,7 +24,7 @@ export default function Header() {
         <Grid container direction="row" justify="space-between">
           <Grid container xs={6}>
             <SportsEsports className="icon" />
-            <Text>Ghost</Text>
+            <Text>Gameflow</Text>
           </Grid>
           <Grid>
             <Facebook className="icon" />
@@ -38,11 +39,11 @@ export default function Header() {
           direction="row"
           justify="center"
         >
-          <Text size={28}>Ghost & Gatsby</Text>
+          <Text size={28}>GameFlow</Text>
         </Grid>
         {/* Sub_Title */}
         <Grid container direction="row" justify="center">
-          <Text color={"#898989"}>Thought, stories and JAMstack</Text>
+          <Text color={c3}>New Content will be available soon..</Text>
         </Grid>
         {/* Action Route */}
         <Grid
@@ -53,20 +54,17 @@ export default function Header() {
         >
           <Grid container xs={9}>
             <a className="action_btn" href="#">
-              <Text color={"#898989"}>Home</Text>
+              <Text color={c3}>Home</Text>
             </a>
             <a className="action_btn" href="#">
-              <Text color={"#898989"}>Tag</Text>
+              <Text color={c3}>Tag</Text>
             </a>
             <a className="action_btn" href="#">
-              <Text color={"#898989"}>Author</Text>
-            </a>
-            <a className="action_btn" href="#">
-              <Text color={"#898989"}>Hellp</Text>
+              <Text color={c3}>Author</Text>
             </a>
           </Grid>
           <Grid>
-            <Text color={"#898989"}>About</Text>
+            <Text color={c3}>About</Text>
           </Grid>
         </Grid>
       </Container>

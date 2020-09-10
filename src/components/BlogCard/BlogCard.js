@@ -6,44 +6,65 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Text from "../Text/Text";
 import { Avatar, Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { c1, c2 } from "../../themes/Color";
+import moment from "moment";
 
-export default function BlogCard() {
+export default function BlogCard({
+  title,
+  image,
+  content,
+  blogger,
+  created_date,
+  category,
+}) {
+  const MAX_LENGTH = 150;
+
   return (
-    <Card>
-      <CardActionArea>
-        <CardMedia
-          className="image"
-          image="https://images.hdqwalls.com/download/2020-4k-cyberpunk-2077-81-1300x1300.jpg"
-        />
-        <CardContent>
-          <Text color={"#0c0112"} size={19} weight={"bold"}>
-            About Ghost + Gatsby
-          </Text>
-          <Text color={"#4f4f4f"}>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Text>
-          <Grid
-            container
-            direction="row"
-            justify="space-between"
-            className="avatar_container"
-          >
-            <Grid container alignItems="center" xs={6}>
-              <Avatar
-                className="avatar"
-                src="https://images.hdqwalls.com/download/2020-4k-cyberpunk-2077-81-1300x1300.jpg"
-              />
-              <Text color={"#666363"} size={13}>
-                Gatsby
+    <Link
+      to={{
+        pathname: "/detail",
+        state: { title, image, content, blogger, created_date, category },
+      }}
+      className="link"
+    >
+      <Card>
+        <CardActionArea>
+          <CardMedia className="image" image={image} />
+          <CardContent>
+            <Text color={c1} size={19} weight={"bold"}>
+              {title}
+            </Text>
+            <Text color={c2}>
+              {content.length > MAX_LENGTH ? (
+                <div>
+                  {`${content.substring(0, MAX_LENGTH)}...`}
+                  Read more
+                </div>
+              ) : (
+                <p>{content}</p>
+              )}
+            </Text>
+            <Grid
+              container
+              direction="row"
+              justify="space-between"
+              alignItems="center"
+              className="avatar_container"
+            >
+              <Grid container alignItems="center" xs={6}>
+                <Avatar className="avatar" src={blogger.profile} />
+                <Text color={c2} size={13}>
+                  {blogger.name}
+                </Text>
+              </Grid>
+              <Text color={c2} size={13}>
+                {moment(created_date, "YYYYMMDD").fromNow()}
               </Text>
             </Grid>
-            <Text color={"#666363"} size={13}>
-              2 min read
-            </Text>
-          </Grid>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Link>
   );
 }
