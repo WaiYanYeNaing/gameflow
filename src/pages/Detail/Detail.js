@@ -6,7 +6,8 @@ import { c4, c1, c2 } from "../../themes/Color";
 import moment from "moment";
 import { Usb } from "@material-ui/icons";
 
-export default function Detail({ location }) {
+export default function Detail(props) {
+  const { currentPath, location } = props;
   const [categories, setcategories] = useState([
     "Among Us",
     "Dead By Daylight",
@@ -16,7 +17,10 @@ export default function Detail({ location }) {
     "Review",
   ]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.push({});
+  }, [currentPath]);
 
   const stripHtml = (html) => {
     // Create a new div element
@@ -28,12 +32,21 @@ export default function Detail({ location }) {
   };
 
   return (
-    <div>
+    <div key={currentPath}>
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-8645062450812910"
+        data-ad-slot="6997234210"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
       <Container maxWidth="md">
         <Grid container direction="row" className="category_container">
-          {location.state.category.map((v) => {
+          {location.state.category.map((v, i) => {
             return (
               <Text
+                key={i}
                 size={15}
                 style={{
                   backgroundColor: c4,

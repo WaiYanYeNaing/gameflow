@@ -10,6 +10,7 @@ import {
 import { Typography, Container } from "@material-ui/core";
 import Text from "../Text/Text";
 import { c2, c3 } from "../../themes/Color";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -64,7 +65,9 @@ export default function Header() {
             </a>
           </Grid>
           <Grid>
-            <Text color={c3}>About</Text>
+            <Link to={{ pathname: "/about", state: {} }} className="action_btn">
+              <Text color={c3}>About Us</Text>
+            </Link>
           </Grid>
         </Grid>
       </Container>
